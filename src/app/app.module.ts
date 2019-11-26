@@ -13,7 +13,7 @@ import {
 } from './components';
 
 import { AppRoutingModule } from './app-routing.module';
-import { InMemoryDb } from './mock/in-memory-db.service';
+// import { InMemoryDb } from './mock/in-memory-db.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 
 @NgModule({
@@ -26,14 +26,14 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     HeroSearchComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDb, {
-      dataEncapsulation: false,
-      delay: 100
-    }),
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDb, {
+    //   dataEncapsulation: false,
+    //   delay: 100
+    // }),
   ],
   providers: [],
   bootstrap: [AppComponent]
