@@ -26,7 +26,7 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     HeroSearchComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
